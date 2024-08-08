@@ -21,7 +21,7 @@
             <input type="hidden" id="id" name="id" th:value="${student.getId()}">
             <div class="row g-3 align-items-center mt-2">
                 <div class="col-2">
-                    <label for="title" class="col-form-label">Nombre</label>
+                    <label for="name" class="col-form-label">Nombre</label>
                 </div>
                 <div class="col-auto">
                     <input type="text" id="name" name="name" class="form-control" th:value="${student.getName()}">
@@ -30,13 +30,13 @@
 
             <div class="row g-3 align-items-center mt-2">
                 <div class="col-2">
-                    <label for="course" class="col-form-label">Curso</label>
+                    <label for="courses" class="col-form-label">Curso</label>
                 </div>
                 <div class="col-auto">
-                    <select id="course" name="course" class="form-select">
-                        <option th:each="course : ${courses}" th:value="${course.getId()}"
-                                th:text="${course.getTitle()}"
-                                th:selected="${course.getId() == film.getCourse().getId()}"
+                    <select id="courses" name="courses" class="form-select">
+                        <option th:each="courses : ${courses}" th:value="${courses.getId()}"
+                                th:text="${courses.getTitle()}"
+
                         ></option>
                     </select>
                 </div>

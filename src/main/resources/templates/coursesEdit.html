@@ -18,13 +18,13 @@
             <h2>Listado de Cursos</h2>
         </div>
         <form th:action="@{/courses}" method="post" class="form">
-            <input type="hidden" id="id" name="id" th:value="${course.getId()}">
+            <input type="hidden" id="id" name="id" th:value="${courses.getId()}">
             <div class="row g-3 align-items-center mt-2">
                 <div class="col-2">
                     <label for="title" class="col-form-label">Curso</label>
                 </div>
                 <div class="col-auto">
-                    <input type="text" id="title" name="title" class="form-control" th:value="${course.getTitle()}">
+                    <input type="text" id="title" name="title" class="form-control" th:value="${courses.getTitle()}">
                 </div>
             </div>
 

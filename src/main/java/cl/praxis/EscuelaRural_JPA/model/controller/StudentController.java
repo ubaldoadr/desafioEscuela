@@ -27,7 +27,7 @@ public class StudentController {
 
     @GetMapping("/{id}")
     public String findOne(@PathVariable("id") int id, Model model){
-        model.addAttribute("students", service.findOne(id));
+        model.addAttribute("student", service.findOne(id));
         model.addAttribute("courses", courseService.findAll());
         return "studentEdit";
     }
@@ -53,7 +53,7 @@ public class StudentController {
     public String delete(@PathVariable("id") int id){
         boolean result = service.delete(id);
 
-        return "redirect:/films";
+        return "redirect:/students";
     }
 
 }

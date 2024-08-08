@@ -8,7 +8,10 @@ import java.util.Set;
 
 @Entity
 @Table(name = "student")
-@Data
+@Getter
+@Setter
+@EqualsAndHashCode(exclude = {"courses"})
+@ToString(exclude = {"courses"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
@@ -20,10 +23,10 @@ public class Student {
     private String name;
 
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
+    @ManyToMany(fetch = FetchType.EAGER,
+            cascade =
+            CascadeType.ALL
+    )
     @JoinTable(
             name = "student_course",
             joinColumns = @JoinColumn(name="student_id", referencedColumnName = "student_id"),

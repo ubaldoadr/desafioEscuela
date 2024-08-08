@@ -24,8 +24,9 @@
                 <thead class="table-dark">
                     <tr>
                         <th>#</th>
-                        <th>Nombre</th>
 
+                        <th>Nombre</th>
+                        <th>Curso</th>
                         <th>Acciones</th>
                     </tr>
                 </thead>
@@ -34,10 +35,14 @@
                         <th th:text="${student.getId()}"></th>
                         <td th:text="${student.getName()}"></td>
 
-                        <td >xxx</td>
                         <td>
-                            <a th:href="@{/students/{id}(id=${student.getId()})}" class="btn btn-primary">editar</a>
-                            <a th:href="@{/students/{id}/del(id=${student.getId()})}" class="btn btn-danger">borrar</a>
+                            <ol>
+                                <li th:each="course : ${student.getCourses()}" th:text="${course.getTitle()}"></li>
+                            </ol>
+                        </td>
+                        <td>
+                            <a th:href="@{/students/{id}(id=${student.getId()})}" class="btn btn-primary">Editar</a>
+                            <a th:href="@{/students/{id}/del(id=${student.getId()})}" class="btn btn-danger">Borrar</a>
                         </td>
                     </tr>
                 </tbody>

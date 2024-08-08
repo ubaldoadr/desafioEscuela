@@ -9,6 +9,8 @@ import java.util.Set;
 @Table(name = "course")
 @Setter
 @Getter
+
+@EqualsAndHashCode
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
